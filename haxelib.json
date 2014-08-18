@@ -1,0 +1,13 @@
+{
+  "name": "nodeunit",
+  "url": "https://github.com/proletariatgames/haxe-nodeunit",
+  "license": "BSD",
+  "tags": ["nodejs", "unittest","testing"],
+  "description": "Small nodeunit wrapper for haxe",
+  "version": "0.0.1",
+  "releasenote": "Initial version",
+  "contributors": ["proletariatgames", "lpetre"],
+  "dependencies": {
+    "continuation": ""
+  }
+}
