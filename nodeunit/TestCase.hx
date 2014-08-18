@@ -29,7 +29,9 @@ extern class TestCase {
   public function notStrictEqual(actual:Dynamic, expected:Dynamic) : Void;
 
   // - Expects block to throw an error.
-  // throws(block, [error], [message]) 
+  @:overload(function(block:Dynamic, error:Dynamic, message:Dynamic) : Void {})
+  @:overload(function(block:Dynamic, error:Dynamic) : Void {})
+  public function throws(block:Dynamic) : Void;
 
   // - Expects block not to throw an error.
   // doesNotThrow(block, [error], [message]) 
