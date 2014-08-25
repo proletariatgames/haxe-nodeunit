@@ -19,7 +19,7 @@ The easiest way to get running is to install nodeunit globally
 
     npm install -g nodeunit
 
-And install source-map-support whereever you'll run your tests from
+And install source-map-support wherever you'll run your tests from
 
     cd example && npm install source-map-support
 
