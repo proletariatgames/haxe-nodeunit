@@ -1,9 +1,17 @@
+/*!
+ * haxe-nodeunit
+ * Copyright (c) 2014 Proletariat Inc
+ * MIT Licensed
+ */
 package nodeunit;
 
 import haxe.rtti.Meta;
 
-class TestExportHelper
-{
+/**
+ * Helper code to inspect a class and form nodeunit-esq module exports. This class is used
+ * internally by TestMain and TestSuite.
+ */
+class TestExportHelper {
   /**
    * Method to be called before each test in a class.
    */
@@ -28,7 +36,10 @@ class TestExportHelper
     return [];
   }
 
-  public static function exportSetupTeardown(exports:Dynamic, klass:Class<Dynamic>) : Void {
+  /**
+   * Helper code to inspect a class and form nodeunit-esq module exports.
+   */
+   public static function exportSetupTeardown(exports:Dynamic, klass:Class<Dynamic>) : Void {
     for (funcName in [SETUP_FUNC_NAME, TEARDOWN_FUNC_NAME]) {
       var func = Reflect.field(klass, funcName);
       if (func != null) {
@@ -41,6 +52,9 @@ class TestExportHelper
     }
   }
 
+  /**
+   * Helper code to inspect a class and form nodeunit-esq module exports.
+   */
   public static function exportTests(klass:Class<Dynamic>) : Dynamic {
     var tests:Dynamic = {};
     exportSetupTeardown(tests, klass);
