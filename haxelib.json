@@ -8,5 +8,7 @@
   "releasenote": "Initial version",
   "contributors": ["lpetre"],
   "dependencies": {
+      "nodejs": "2.0.1"
+    }
   }
 }
