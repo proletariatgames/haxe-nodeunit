@@ -1,0 +1,6 @@
+-main ExampleMain
+-js test.js
+-debug
+-lib nodejs
+-lib continuation
+-cp ../
