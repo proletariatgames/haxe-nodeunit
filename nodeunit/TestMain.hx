@@ -47,7 +47,7 @@ class TestMain {
    */
   public function installSourceMap() : Void {
     var map:String = untyped __js__('__filename + ".map"');
-    var fs = untyped __js__('require("fs")');
+    var fs = js.Lib.require("fs");
 
     if (fs.existsSync(map)) {
       function resolveMapFile() : String {
@@ -60,7 +60,7 @@ class TestMain {
         return s_sourceMap;
       };
 
-      var source_map = untyped __js__('require("source-map-support")');
+      var source_map = js.Lib.require("source-map-support");
       source_map.install({retrieveSourceMap: resolveMapFile});
     }
   }
