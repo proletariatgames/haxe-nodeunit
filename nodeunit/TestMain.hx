@@ -5,8 +5,6 @@
  */
 package nodeunit;
 
-import js.Node;
-
 /**
  * Removes any conflicting @:expose settings, and exposes Tests / Suites for use by nodeunit
  */
@@ -48,11 +46,13 @@ class TestMain {
    * Loads the source map, so that callstacks have the proper haxe filename and linenumber
    */
   public function installSourceMap() : Void {
-    var map = '${Node.__filename}.map';
-    if (Node.fs.existsSync(map)) {
+    var map:String = untyped __js__('__filename + ".map"');
+    var fs = js.Lib.require("fs");
+
+    if (fs.existsSync(map)) {
       function resolveMapFile() : String {
         if (s_sourceMap == null) {
-          var data = Node.fs.readFileSync(map, 'utf8');
+          var data = fs.readFileSync(map, {encoding: 'utf8'});
           if (data != null) {
             s_sourceMap = {map: data};
           }
@@ -60,7 +60,8 @@ class TestMain {
         return s_sourceMap;
       };
 
-      Node.require("source-map-support").install({retrieveSourceMap: resolveMapFile});
+      var source_map = js.Lib.require("source-map-support");
+      source_map.install({retrieveSourceMap: resolveMapFile});
     }
   }
 }

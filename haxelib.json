@@ -4,11 +4,7 @@
   "license": "MIT",
   "tags": ["nodejs", "node.js", "unittest","testing", "nodeunit"],
   "description": "Small nodeunit wrapper for haxe",
-  "version": "0.0.1",
-  "releasenote": "Initial version",
-  "contributors": ["lpetre"],
-  "dependencies": {
-      "nodejs": "2.0.1"
-    }
-  }
+  "version": "0.0.2",
+  "releasenote": "Fewer dependencies",
+  "contributors": ["lpetre"]
 }
